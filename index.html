@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Chris Does Work</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo logo-font logo-anim">Chris Does Work</div>
+    <div class="menu">
+      <input type="checkbox" id="menu" tabindex="0">
+      <label for="menu" id="menulbl"></label>
+      <div class="menucont">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="https://chrisdoeswork.wordpress.com/" target="_blank">Blog <span class="chris-share"></span></a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="center">
+      <div class="centercont">
+        <h1>Get <span class="black">professional</span> quality services</h1>
+      </div>
+      <div class="centertopics">Video // Audio // Software development</div>
+    </div>
+    <div class="scroll">︾</div>
+  </div>
+
+  <section>
+    <a id="services"></a>
+    <h1>Services</h1>
+  </section>
+  <section>
+    <a id="portfolio"></a>
+    <h1>Portfolio</h1>
+  </section>
+  <section>
+    <a id="about"></a>
+    <h1>About</h1>
+  </section>
+  <section>
+    <a id="contact"></a>
+    <h1>Contact</h1>
+  </section>
+
+  <div class="footer">
+    <div class="footer-left">Copyright &copy; 2024 Chris Nilsen</div>
+    <div class="footer-right">
+      <span class="chris chris-x"></span>
+      <span class="chris chris-youtube"></span>
+      <span class="chris chris-whatsapp"></span>
+      <span class="chris chris-envelop"></span>
+    </div>
+
+  </div>
+
+<img src="gfx/cloud1.png" class="cloud1" alt="clouds">
+<img src="gfx/cloud2.png" class="cloud2" alt="clouds">
+<img src="gfx/cloud3.png" class="cloud3" alt="clouds">
+<video id="birds" class="videobirds" autoplay playsinline preload="auto" muted>
+  <source src="video/chroma-birds.webm" type="video/webm">
+</video>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const video = document.querySelector('#birds');
+  video.playbackRate = 0.5;
+  video.addEventListener('ended', e => {
+    const delay = (Math.random() * 9 + 3) * 1000;
+    setTimeout(() => {
+      const pp = video.play();
+      if ( pp ) {
+        pp.then(() => {}).catch(() => {});
+      }
+    }, delay);
+  });
+
+  //  document.querySelector('#menu').addEventListener('keydown', function(e) {
+  //    if ( e.which === 32 || e.which === 13 ) {
+  //      e.preventDefault();
+  //      this.click();
+  //    }
+  //  });
+
+</script>
+</body>
+</html>
