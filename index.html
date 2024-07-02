@@ -41,27 +41,51 @@
     <a id="services"></a>
     <h1>Services</h1>
     <div class="sectionServices">
-      <div><span class="chris-video-camera span3em"></span></div>
-      <div><span class="chris-headphones span3em"></span></div>
-      <div><span class="chris-embed2 span3em"></span></div>
+      <div class="sectionServicesHead">
+        <span class="chris-video-camera span3em"></span>
+        <div>
+          <h2>Video services</h2>
+        </div>
+      </div>
+
+      <div class="sectionServicesHead">
+        <span class="chris-headphones span3em"></span>
+        <div>
+          <h2>Audio services</h2>
+        </div>
+      </div>
+
+      <div class="sectionServicesHead">
+        <span class="chris-embed2 span3em"></span>
+        <div>
+          <h2>Web and Software Development</h2>
+        </div>
+      </div>
     </div>
   </section>
 
   <section>
     <a id="portfolio"></a>
     <h1>Portfolio</h1>
-    <div class="sectionPortfolio">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
-      <img src="http://dummy-images.com/abstract/dummy-480x270-Stripes.jpg" alt="">
+    <div class="sectionPortfolio" id="media">
+      <a href="https://picsum.photos/2400/1350?random=1"><img src="https://picsum.photos/480/270?random=1" alt=""></a>
+      <a href="https://picsum.photos/480/480?random=3"><img src="https://picsum.photos/480/480?random=3" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=4"><img src="https://picsum.photos/480/270?random=4" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=5"><img src="https://picsum.photos/480/270?random=5" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=6"><img src="https://picsum.photos/480/270?random=6" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=7"><img src="https://picsum.photos/480/270?random=7" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=8"><img src="https://picsum.photos/480/270?random=8" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=9"><img src="https://picsum.photos/480/270?random=9" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=0"><img src="https://picsum.photos/480/270?random=0" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=10"><img src="https://picsum.photos/480/270?random=10" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=11"><img src="https://picsum.photos/480/270?random=11" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=12"><img src="https://picsum.photos/480/270?random=12" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=13"><img src="https://picsum.photos/480/270?random=13" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=14"><img src="https://picsum.photos/480/270?random=14" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=15"><img src="https://picsum.photos/480/270?random=15" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=16"><img src="https://picsum.photos/480/270?random=16" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=17"><img src="https://picsum.photos/480/270?random=17" alt=""></a>
+      <a href="https://picsum.photos/480/270?random=18"><img src="https://picsum.photos/480/270?random=18" alt=""></a>
     </div>
   </section>
 
@@ -101,6 +125,11 @@
     });
   });
 
+  document.querySelector('.scroll').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
+  });
+
   const video = document.querySelector('#birds');
   video.playbackRate = 0.5;
   video.addEventListener('ended', e => {
@@ -113,13 +142,22 @@
     }, delay);
   });
 
-  //  document.querySelector('#menu').addEventListener('keydown', function(e) {
-  //    if ( e.which === 32 || e.which === 13 ) {
-  //      e.preventDefault();
-  //      this.click();
-  //    }
-  //  });
-
 </script>
+
+<script type="module">
+import PhotoSwipeLightbox from './photoswipe/dist/photoswipe-lightbox.esm.js';
+
+const lightbox = new PhotoSwipeLightbox({
+  gallery              : '#media',
+  children             : 'a',
+  showHideAnimationType: 'zoom',
+  preload              : [ 1, 4 ],
+  pswpModule           : () => import('./photoswipe/dist/photoswipe.esm.js')
+});
+lightbox.init();
+</script>
+
+<link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+
 </body>
 </html>

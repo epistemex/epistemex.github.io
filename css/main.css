@@ -351,24 +351,34 @@ section h1 {
 .sectionPortfolio {
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(256px, 1fr));
-  grid-gap:20px 20px;
+  grid-gap:12px 12px;
   }
 
 .sectionPortfolio img {
-  border:1px solid;
+  border:1px solid rgba(255, 255, 255, 0.5);
   aspect-ratio:16/9;
-  object-fit:contain;
+  object-fit:cover;
   width:100%;
+  transition:scale 0.2s;
+  border-radius:5px;
+  cursor:pointer;
+  margin:0;
+  padding:0;
+  }
+
+.sectionPortfolio img:hover {
+  scale:1.1;
   }
 
 .span3em {
   font-size:3em;
   }
 
-.sectionServices div {
+.sectionServicesHead {
   background:rgba(0, 0, 0, 0.2);
   padding:20px 40px;
   box-sizing:border-box;
+  border-radius:12px;
   }
 
 footer {
