@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="keywords" content="software,web development,video services,audio services,video editing,composition,web pages,web sites,utilities,tools,integration,photos,footage">
 
   <title>Chris Does Work</title>
 
@@ -32,7 +33,7 @@
       <div class="centercont">
         <h1>Get <span class="black">professional</span> quality services at <span class="black">reasonable</span> prices.</h1>
       </div>
-      <div class="centertopics">Video // Audio // Software development</div>
+      <div class="centertopics">Video // Audio // Web & Software Development</div>
     </div>
     <div class="scroll">︾</div>
   </div>
@@ -45,6 +46,7 @@
         <span class="chris-video-camera span3em"></span>
         <div>
           <h2>Video services</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, <br><br>but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
       </div>
 
@@ -52,13 +54,15 @@
         <span class="chris-headphones span3em"></span>
         <div>
           <h2>Audio services</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with </p>
         </div>
       </div>
 
       <div class="sectionServicesHead">
         <span class="chris-embed2 span3em"></span>
         <div>
-          <h2>Web and Software Development</h2>
+          <h2>Web & Software Development</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
         </div>
       </div>
     </div>
@@ -92,6 +96,12 @@
   <section>
     <a id="about"></a>
     <h1>About</h1>
+    <div class="servicesAbout">
+      <div class="servicesAboutCont">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+      </div>
+    </div>
   </section>
 
   <section>
@@ -106,7 +116,7 @@
       <a href="https://www.youtube.com/channel/UCbl9B9P1NVc0ZTv8uVEp43g" target="_blank" alt="YouTube" class="social chris-youtube"></a>
       <a href="https://github.com/epistemex" target="_blank" alt="Github" class="social chris-github"></a>
       <a href="https://wa.me/524613303698" target="_blank" alt="Whatsapp" class="social chris-whatsapp"></a>
-      <a href="emailto:kenchrisnilsen@gmail.com" alt="Email" class="social chris-envelop"></a>
+      <a href="mailto:kenchrisnilsen@gmail.com?subject=Mail from epistemex web page" alt="Email" class="social chris-envelop"></a>
     </div>
   </footer>
 
@@ -117,47 +127,22 @@
   <source src="video/chroma-birds.webm" type="video/webm">
 </video>
 
-<script>
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  document.querySelector('.scroll').addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector('#services').scrollIntoView({ behavior: 'smooth' });
-  });
-
-  const video = document.querySelector('#birds');
-  video.playbackRate = 0.5;
-  video.addEventListener('ended', e => {
-    const delay = (Math.random() * 9 + 3) * 1000;
-    setTimeout(() => {
-      const pp = video.play();
-      if ( pp ) {
-        pp.then(() => {}).catch(() => {});
-      }
-    }, delay);
-  });
-
-</script>
+<script src="js/main.js"></script>
 
 <script type="module">
-import PhotoSwipeLightbox from './photoswipe/dist/photoswipe-lightbox.esm.js';
+  import PhotoSwipeLightbox from './photoswipe/dist/photoswipe-lightbox.esm.js';
 
-const lightbox = new PhotoSwipeLightbox({
-  gallery              : '#media',
-  children             : 'a',
-  showHideAnimationType: 'zoom',
-  preload              : [ 1, 4 ],
-  pswpModule           : () => import('./photoswipe/dist/photoswipe.esm.js')
-});
-lightbox.init();
+  const lightbox = new PhotoSwipeLightbox({
+    gallery              : '#media',
+    children             : 'a',
+    showHideAnimationType: 'zoom',
+    preload              : [ 1, 4 ],
+    pswpModule           : () => import('./photoswipe/dist/photoswipe.esm.js')
+  });
+  lightbox.init();
 </script>
 
-<link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+  <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
 
 </body>
 </html>
