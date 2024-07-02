@@ -422,3 +422,9 @@ div.pswp__img--placeholder,
 .pswp--one-slide .pswp__counter {
   display:none;
   }
+
+/* fix, epistemex */
+.pswp img {
+  max-width:none;
+  object-fit:contain;
+  }
