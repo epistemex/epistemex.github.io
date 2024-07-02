@@ -74,6 +74,10 @@
   content:"\ea0c";
   }
 
+.chris-cross:before {
+  content:"\ea0f";
+  }
+
 .chris-circle-up:before {
   content:"\ea41";
   }
@@ -110,8 +114,12 @@
   content:"\ea9d";
   }
 
-.chris-cross:before {
-  content:"\ea0f";
+.chris-github:before {
+  content:"\eab0";
+  }
+
+.centercont h1, .centertopics, .menu, h1, h2, h3, h4, h5, footer {
+  font-family:"Inter", sans-serif;
   }
 
 /*▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
@@ -122,7 +130,7 @@
 
 html, body {
   margin:0;
-  min-width:1024px;
+  min-width:600px;
   }
 
 body {
@@ -143,6 +151,7 @@ body {
 
 .header {
   display:grid;
+  position:relative;
   grid-template:  "logo     menu"
                   "center   center"
                   "scroll   scroll";
@@ -153,7 +162,7 @@ body {
   box-sizing:border-box;
   padding:0 24px;
   background:rgb(2, 0, 36);
-  background:linear-gradient(160deg, rgba(2, 0, 36, 1) 0%, rgba(48, 9, 121, 1) 29%, rgba(48, 193, 246, 1) 100%);
+  background:linear-gradient(160deg, rgb(2, 0, 36) 0%, rgb(48, 9, 121) 29%, rgb(48, 193, 246) 100%);
   }
 
 .logo {
@@ -167,7 +176,7 @@ body {
   font-size:2.2em;
   text-transform:uppercase;
   color:#e82256;
-  /*transition:font-size 0.16s;*/
+  transition:font-size 0.16s;
   }
 
 .logo-anim {
@@ -201,10 +210,13 @@ body {
   text-transform:uppercase;
   padding:12px 12px 0 0;
   z-index:100;
+  user-select:none;
   }
 
 .center {
+  display:grid;
   grid-area:center;
+  justify-content:center;
   }
 
 .centercont {
@@ -212,13 +224,15 @@ body {
   justify-content:center;
   align-items:center;
   height:64%;
-  padding-top:30px;
+  padding-top:120px;
+  max-width:80vw;
   }
 
 .centercont h1 {
   color:#fff;
-  font-size:5em;
+  font-size:4.7em;
   transition:font-size 0.17s;
+  line-height:1.2em;
   }
 
 .centercont h1 span {
@@ -288,6 +302,7 @@ input#menu {
   content:"\e9bd";
   color:#fff;
   font-size:1.5em;
+  cursor:pointer;
   }
 
 .menu input:checked + label:before {
@@ -295,6 +310,7 @@ input#menu {
   content:"\ea0f";
   color:#fff;
   font-size:1.2em;
+  cursor:pointer;
   }
 
 #menu + label {
@@ -314,10 +330,9 @@ section {
   width:100vw;
   min-height:30vh;
   box-sizing:border-box;
-  padding:32px;
+  padding:64px;
   color:#fff;
-  justify-content:center;
-  display:flex;
+  text-align:center;
   }
 
 section h1 {
@@ -327,7 +342,36 @@ section h1 {
   font-weight:lighter;
   }
 
-.footer {
+.sectionServices {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap:32px;
+  }
+
+.sectionPortfolio {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(256px, 1fr));
+  grid-gap:20px 20px;
+  }
+
+.sectionPortfolio img {
+  border:1px solid;
+  aspect-ratio:16/9;
+  object-fit:contain;
+  width:100%;
+  }
+
+.span3em {
+  font-size:3em;
+  }
+
+.sectionServices div {
+  background:rgba(0, 0, 0, 0.2);
+  padding:20px 40px;
+  box-sizing:border-box;
+  }
+
+footer {
   display:grid;
   width:100vw;
   padding:64px;
@@ -345,10 +389,12 @@ section h1 {
   grid-area:right;
   }
 
-.chris {
+.social {
   display:inline-block;
   margin-right:1em;
-  font-size:1.6em;
+  font-size:1.8em;
+  text-decoration:none;
+  color:#fff;
   }
 
 /*▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪
@@ -403,32 +449,42 @@ section h1 {
 @media screen and (max-width:1550px) {
   .centercont h1 {
     color:#fff;
-    font-size:4em;
+    font-size:3.5em;
     }
 
   }
 
 @media screen and (max-width:1280px) {
   .header {
-    grid-template-columns:1fr 400px;
+    grid-template-columns:1fr 300px;
     }
 
   .logo {
     font-size:2em;
+    line-height:1em;
     }
 
   .centercont h1 {
     color:#fff;
-    font-size:3.2em;
+    font-size:3em;
+    line-height:1em;
     }
 
   .centertopics {
     font-size:2em;
+    line-height:1em;
     }
 
   .menucont {
-    max-height:0;
-    overflow:hidden;
+    display:none;
+    position:absolute;
+    right:0;
+    top:0;
+    background:rgba(12, 2, 55, 0.5);
+    text-align:left;
+    width:300px;
+    z-index:-1;
+    border-bottom-left-radius:16px;
     }
 
   #menu + label {
@@ -436,11 +492,7 @@ section h1 {
     }
 
   .menu input:checked ~ .menucont {
-    max-height:initial;
-    }
-
-  .menucont {
-    text-align:left;
+    display:block;
     }
 
   .menu ul {
@@ -449,7 +501,6 @@ section h1 {
 
   .menu ul > li {
     display:block;
-    background:rgba(12, 2, 55, 0.5);
     padding:8px;
     }
   }
