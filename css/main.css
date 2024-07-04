@@ -436,12 +436,12 @@ footer {
   font-size:3em;
   line-height:1em;
   font-weight:lighter;
-  margin-bottom:90px;
+  margin-bottom:70px;
   }
 
 .contactCont {
   display:grid;
-  grid-template-columns:0.4fr 0.6fr;
+  grid-template-columns:minmax(300px, 0.33fr) 0.67fr;
   width:75vw;
   min-width:600px;
   }
@@ -472,7 +472,6 @@ footer {
   display:grid;
   grid-template:
     "name email"
-    "subject subject"
     "message message"
     "button button";
   grid-template-columns:1fr 1fr;
@@ -487,10 +486,6 @@ footer {
   margin-top:20px;
   }
 
-.contact-name, .contact-email, .contact-subject, .contact-message {
-
-  }
-
 .contact-name {
   grid-area:name;
   }
@@ -499,15 +494,11 @@ footer {
   grid-area:email;
   }
 
-.contact-subject {
-  grid-area:subject;
-  }
-
 .contact-message {
   grid-area:message;
   }
 
-.contact-right input[type=text] {
+.contact-right input {
   width:100%;
   font-size:18px;
   padding:12px 0;
@@ -515,6 +506,11 @@ footer {
   border:none;
   background:transparent;
   border-bottom:1px solid #999;
+  }
+
+.contact-right input:focus,
+.contact-right textarea:focus {
+  padding:12px;
   }
 
 .contact-right textarea {
@@ -525,7 +521,7 @@ footer {
   border-bottom:1px solid #999;
   background:transparent;
   -webkit-border-bottom-right-radius:0;
-  padding:20px 0;
+  padding:12px 0;
   box-sizing:border-box;
   font-size:1.2em;
   resize:vertical;
